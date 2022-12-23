@@ -1,0 +1,36 @@
+@import "./varyables";
+
+.background {
+  background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1612894575_120-p-fon-krasnie-rozi-201.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+}
+.content {
+  text-align: center;
+  .cell {
+    margin-top: 40px;
+  }
+  input {
+    width: 350px;
+    height: 50px;
+    border: 2px;
+    border-radius: $b-radius;
+  }
+  label {
+    color: $primarycolor;
+    font-size: 30px;
+  }
+}
+.input-send {
+  margin-top: $margtop;
+  background: linear-gradient(orchid, $thirdbg);
+  &:hover {
+    background: linear-gradient($secondarycolor, $thirdbg);
+  }
+}
+.select {
+  margin-top: $margtop;
+  border-radius: $b-radius;
+}

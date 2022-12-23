@@ -1,0 +1,143 @@
+@use "./use";
+@import "./varyables";
+@import "./form";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontfam;
+}
+.container {
+  width: 1360px;
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: $secondbg;
+  a {
+    font-size: 20px;
+    &:hover {
+      color: $primarycolor !important;
+    }
+  }
+}
+.about {
+  overflow: hidden;
+  width: 100%;
+  h1 {
+    color: $bg;
+  }
+  p {
+    font-size: 30px;
+    animation-duration: 3s;
+    animation-name: slide;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+  }
+}
+.wrapper {
+  display: block;
+  margin: 0 auto;
+  width: 700px;
+
+
+  ul {
+    list-style-position: inside;
+    width: 250px;
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+    text-decoration: underline;
+  }
+}
+
+.experience {
+  @include use.main-info();
+}
+.education {
+  overflow: hidden;
+  @include use.main-info();
+}
+.hobby {
+  @include use.main-info();
+}
+.skills {
+  @include use.main-info();
+}
+.table {
+  margin: 0 auto;
+  width: 500px !important;
+  border-radius: 10px;
+}
+.about {
+  margin: 0 auto;
+  text-align: center;
+  .photo {
+    border-radius: 20px;
+    &:hover {
+      transform: scale(1.2);
+      transition: 1s;
+    }
+  }
+  .naruto {
+    &:hover {
+      transform: scale(1.3);
+      transition: 1s;
+    }
+    img {
+      animation: animation 3s infinite;
+    }
+  }
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  margin-top: 80px;
+  background-color: $secondbg;
+}
+
+@keyframes animation {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide {
+  from {
+    margin-left: 0%;
+    width: 100%;
+  }
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+  to {
+    margin-left: 100%;
+    width: 300%;
+  }
+}
+@media all and (max-width: 720px) {
+  .table {
+    width: 300px !important;
+  }
+}
+@media all and(max-width: 800px){
+  .wrapper {
+  width: 400px;
+  }
+}
+
+@media all and (max-width: 576px){
+  .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 10px;
+  }
+}
